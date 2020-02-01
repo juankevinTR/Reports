@@ -1,0 +1,15 @@
+# HELP.md
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### CUSTOM CHANGES ###
+/src/main/resources/application.properties
