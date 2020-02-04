@@ -10,12 +10,16 @@ import {ClientService} from './clients/client.service';
 
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import { FormComponent } from './clients/form.component';
+import {FormsModule} from '@angular/forms';
+
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'clients', component: ClientsComponent}
+  {path: 'clients', component: ClientsComponent},
+  {path: 'clients/form', component: FormComponent}
 ];
 
 @NgModule({
@@ -24,11 +28,13 @@ const routes: Routes = [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ClientsComponent
+    ClientsComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ClientService],
