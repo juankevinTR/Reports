@@ -4,7 +4,7 @@
     <h5 class="card-title">Clients list</h5>
 
     <div class="my-2 text-left">
-      <button class="btn btn-rounded btn-primary" type="button" [routerLink] = "['/clients/form']">New client</button>
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clients/form']">New client</button>
     </div>
 
     <table class="table table-bordered table-striped">
@@ -16,6 +16,7 @@
         <th>NIF</th>
         <th>Email</th>
         <th>Date</th>
+        <th colspan="2" class="text-center">Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -26,6 +27,14 @@
         <td>{{client.nif}}</td>
         <td>{{client.email}}</td>
         <td>{{client.createAt}}</td>
+        <td>
+          <button type="button" name="edit" [routerLink]="['/clients/form', client.id]" class="btn btn-warning">Edit
+          </button>
+        </td>
+        <td>
+          <button type="button" name="delete" (click)="delete(client)" class="btn btn-danger">Delete
+          </button>
+        </td>
       </tr>
       </tbody>
     </table>

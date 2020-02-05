@@ -19,7 +19,8 @@ const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'clients', component: ClientsComponent},
-  {path: 'clients/form', component: FormComponent}
+  {path: 'clients/form', component: FormComponent},
+  {path: 'clients/form/:id', component: FormComponent}
 ];
 
 @NgModule({

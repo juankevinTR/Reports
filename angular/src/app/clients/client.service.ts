@@ -21,12 +21,24 @@ export class ClientService {
     // return of(CLIENTS);
     // return this.http.get<Client[]>(this.urlEndPoint);
     return this.http.get(this.urlEndPoint).pipe(
-      map( response => response as Client[] )
+      map(response => response as Client[])
     );
   }
 
-  create(client: Client) : Observable<Client> {
-    return this.http.post<Client>(this.urlEndPoint, client, {headers: this.httpHeaders} );
+  create(client: Client): Observable<Client> {
+    return this.http.post<Client>(this.urlEndPoint, client, {headers: this.httpHeaders});
+  }
+
+  getClient(id): Observable<Client> {
+    return this.http.get<Client>(`${this.urlEndPoint}/${id}`);
+  }
+
+  update(client: Client): Observable<Client>{
+    return this.http.put<Client>(`${this.urlEndPoint}/${client.id}`, client, {headers: this.httpHeaders});
+  }
+
+  delete(id: number): Observable<Client>{
+    return this.http.delete<Client>(`${this.urlEndPoint}/${id}`, {headers: this.httpHeaders});
   }
 
 }
